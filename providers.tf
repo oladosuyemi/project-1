@@ -35,12 +35,12 @@ provider "aws" {
 
 provider "azurerm" {
   # Configuration options
-  region = "us-east-1"
+  region = "West US"
   features {}
 }
 
 provider "azuread" {
   # Configuration options
-  region = "us-east-1"
+  region = "West US"
   features {}
 }

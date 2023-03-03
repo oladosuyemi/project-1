@@ -1,46 +1,40 @@
-# Azure Provider
-terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-      version = "4.57.0"
-    }
-  }
+# Azure Variables
+
+variable "name" {
+  type        = list(string)
+  description = "Name of the users"
+  default = ["Adeyemi", "Ibrahim"]
 }
 
-terraform {
-  required_providers {
-    azurerm = {
-      source = "hashicorp/azurerm"
-      version = "3.46.0"
-    }
-  }
+variable "Adeyemi_password" {
+  type        = string
+  description = "Password for Adeyemi user"
+  default = "Adeyemi123*"
 }
 
-terraform {
-  required_providers {
-    azuread = {
-      source = "hashicorp/azuread"
-      version = "2.36.0"
-    }
-  }
+variable "Ibrahim_password" {
+  type        = string
+  description = "Password for Ibrahim user"
+  default= "Ibrahim123*"
 }
 
-provider "aws" {
-  # Configuration options
-  region = "us-east-1"
-  features {}
+variable "users" {
+    type = list(string)
+  default = ["Ryan", "Huang", "Jarret", "Yicao"]
+}
+
+variable "names_bucket" {
+  type    = list(string)
+  default = ["s3-bucket-1", "s3-bucket-2"]
 }
 
 
-provider "azurerm" {
-  # Configuration options
-  region = "us-east-1"
-  features {}
+variable "vm_size" {
+  type    = string
+  default = "Dsv3"
 }
 
-provider "azuread" {
-  # Configuration options
-  region = "us-east-1"
-  features {}
+variable "storage_account_name" {
+  type    = string
+  default = "project_storage"
 }
